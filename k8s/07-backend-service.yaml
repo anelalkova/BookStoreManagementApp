@@ -1,0 +1,14 @@
+# k8s/07-backend-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+  namespace: bookstore
+spec:
+  selector:
+    app: bookstore-backend
+  ports:
+  - port: 5000
+    targetPort: 5000
+    protocol: TCP
+  type: ClusterIP

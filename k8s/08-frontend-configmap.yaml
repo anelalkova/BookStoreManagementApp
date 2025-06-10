@@ -1,0 +1,10 @@
+# k8s/08-frontend-configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-config
+  namespace: bookstore
+data:
+  API_HOST: "backend-service"
+  API_PORT: "5000"
+  APP_PORT: "8501"

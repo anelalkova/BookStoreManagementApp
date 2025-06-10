@@ -1,0 +1,11 @@
+# k8s/05-backend-configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+  namespace: bookstore
+data:
+  MONGO_HOST: "mongodb-service"
+  MONGO_PORT: "27017"
+  MONGO_DB: "bookstore"
+  APP_PORT: "5000"

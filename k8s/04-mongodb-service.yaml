@@ -1,0 +1,14 @@
+# k8s/04-mongodb-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-service
+  namespace: bookstore
+spec:
+  selector:
+    app: mongodb
+  ports:
+  - port: 27017
+    targetPort: 27017
+    name: mongodb
+  clusterIP: None  # Headless service for StatefulSet
