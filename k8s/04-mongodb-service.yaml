@@ -11,4 +11,4 @@ spec:
   - port: 27017
     targetPort: 27017
     name: mongodb
-  clusterIP: None  # Headless service for StatefulSet
+  clusterIP: None
