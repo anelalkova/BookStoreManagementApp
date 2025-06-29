@@ -94,11 +94,9 @@ jobs:
 
     - name: Deploy to Kubernetes
       run: |
-        # Update image tags in deployment manifests
         sed -i "s|anastasijalalkova/bookstore-backend:latest|anastasijalalkova/bookstore-backend:commit-${{ github.sha }}|g" k8s/backend-deployment.yaml
         sed -i "s|anastasijalalkova/bookstore-frontend:latest|anastasijalalkova/bookstore-frontend:commit-${{ github.sha }}|g" k8s/frontend-deployment.yaml
         
-        # Apply all manifests
         kubectl apply -f k8s/
 
     - name: Verify deployment
